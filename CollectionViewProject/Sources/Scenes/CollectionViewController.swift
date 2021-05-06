@@ -9,6 +9,8 @@ import UIKit
 
 class CollectionViewController: UIViewController {
 
+    let arrayCell = Albums.getSettings()
+
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.delegate = self
@@ -24,10 +26,6 @@ class CollectionViewController: UIViewController {
         setupLayout()
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGFloat(view.frame.width), height: CGFloat(view.frame.height))
-    }
-
     func hierarchyView() {
         view.addSubview(collectionView)
     }
@@ -41,14 +39,22 @@ class CollectionViewController: UIViewController {
 
 }
 
-extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        80
+        2
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let data = arrayCell[indexPath.section].countAlbums[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-
+        cell.icon.image = data.imageAlbum
+        cell.titleView.text = data.nameAlbum
+        cell.countLabel.text = String(data.countImages)
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (view.bounds.width / 2) - 5, height: (view.bounds.width / 2) - 5)
+    }
+
 }
