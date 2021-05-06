@@ -17,6 +17,13 @@ extension Albums {
         return [
             Albums(title: "Мои альбомы", countAlbums: [
                     Album(imageAlbum: UIImage(named: "Недавнее"), nameAlbum: "Недавнее", countImages: 9364),
+                    Album(imageAlbum: UIImage(named: "Избранное"), nameAlbum: "Избранное", countImages: 52),
+                    Album(imageAlbum: UIImage(named: "Недавнее"), nameAlbum: "Недавнее", countImages: 9364),
+                    Album(imageAlbum: UIImage(named: "Избранное"), nameAlbum: "Избранное", countImages: 52)
+
+                    ]),
+            Albums(title: "Мои альбомы", countAlbums: [
+                    Album(imageAlbum: UIImage(named: "Недавнее"), nameAlbum: "Недавнее", countImages: 9364),
                     Album(imageAlbum: UIImage(named: "Избранное"), nameAlbum: "Избранное", countImages: 52)
 
                     ])

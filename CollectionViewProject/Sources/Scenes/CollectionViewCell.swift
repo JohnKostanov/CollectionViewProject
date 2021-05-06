@@ -46,7 +46,7 @@ class CollectionViewCell: UICollectionViewCell {
 
     func setupLayout() {
         icon.translatesAutoresizingMaskIntoConstraints = false
-        icon.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        icon.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
         icon.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         icon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
 
