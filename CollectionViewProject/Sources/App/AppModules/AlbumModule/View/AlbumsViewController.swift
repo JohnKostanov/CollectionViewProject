@@ -21,11 +21,14 @@ class AlbumsViewController: UIViewController {
     }()
 
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: UICollectionViewFlowLayout())
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(AlbumsSell.self, forCellWithReuseIdentifier: "cell")
-
+    
         return collectionView
     }()
 
@@ -35,27 +38,21 @@ class AlbumsViewController: UIViewController {
         hierarchyView()
         setupLayout()
         presenter?.startFetchingAlbums()
-
-
     }
 
     func hierarchyView() {
-        view.addSubview(titleAlbums)
-        view.addSubview(collectionView)
+        view.addSubviews(titleAlbums, collectionView)
     }
+
     func setupLayout() {
-        titleAlbums.translatesAutoresizingMaskIntoConstraints = false
-        titleAlbums.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        titleAlbums.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
-        titleAlbums.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 5).isActive = true
-
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: titleAlbums.bottomAnchor, constant: 20).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        titleAlbums.addConstraints(top: view.topAnchor, paddingTop: 100,
+                                   left: view.leadingAnchor, paddingLeft: 5,
+                                   right: view.trailingAnchor, paddingRight: 5)
+        collectionView.addConstraints(top: titleAlbums.bottomAnchor, paddingTop: 20,
+                                      left: view.leadingAnchor,
+                                      right: view.trailingAnchor,
+                                      bottom: view.bottomAnchor)
     }
-
 }
 
 extension AlbumsViewController: PresenterToViewProtocol {
@@ -98,12 +95,7 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.countLabel.text = String(data.countImages)
             return cell
         }
-
     }
-
-
-
-
 }
 
 extension AlbumsViewController: UICollectionViewDelegateFlowLayout {

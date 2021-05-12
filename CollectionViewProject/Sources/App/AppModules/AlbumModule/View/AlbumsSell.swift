@@ -10,7 +10,7 @@ import UIKit
 class AlbumsSell: UICollectionViewCell {
     lazy var icon: UIImageView = {
         let icon = UIImageView()
-//        icon.contentMode = .scaleToFill
+        icon.contentMode = .scaleToFill
         icon.layer.cornerRadius = 8
         icon.layer.masksToBounds = true
         return icon
@@ -38,23 +38,12 @@ class AlbumsSell: UICollectionViewCell {
     }
 
     func setupHierarchy() {
-        addSubview(icon)
-        addSubview(titleView)
-        addSubview(countLabel)
+        addSubviews(icon, titleView, countLabel)
     }
 
     func setupLayout() {
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
-        icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        icon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
-
-        titleView.translatesAutoresizingMaskIntoConstraints = false
-        titleView.topAnchor.constraint(equalTo: icon.bottomAnchor).isActive = true
-        titleView.leadingAnchor.constraint(equalTo: icon.leadingAnchor).isActive = true
-
-        countLabel.translatesAutoresizingMaskIntoConstraints = false
-        countLabel.topAnchor.constraint(equalTo: titleView.bottomAnchor).isActive = true
-        countLabel.leadingAnchor.constraint(equalTo: icon.leadingAnchor).isActive = true
+        icon.addConstraints(top: contentView.topAnchor, paddingTop: 20, left: contentView.leadingAnchor, bottom: contentView.bottomAnchor)
+        titleView.addConstraints(top: icon.bottomAnchor, left: icon.leadingAnchor)
+        countLabel.addConstraints(top: titleView.bottomAnchor, left: icon.leadingAnchor)
     }
 }
