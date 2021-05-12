@@ -1,17 +1,16 @@
 //
-//  CollectionViewCell.swift
+//  AlbumsSell.swift
 //  CollectionViewProject
 //
-//  Created by Джон Костанов on 5/5/21.
+//  Created by Джон Костанов on 7/5/21.
 //
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
-
+class AlbumsSell: UICollectionViewCell {
     lazy var icon: UIImageView = {
         let icon = UIImageView()
-        icon.contentMode = .scaleToFill
+//        icon.contentMode = .scaleToFill
         icon.layer.cornerRadius = 8
         icon.layer.masksToBounds = true
         return icon
@@ -46,9 +45,9 @@ class CollectionViewCell: UICollectionViewCell {
 
     func setupLayout() {
         icon.translatesAutoresizingMaskIntoConstraints = false
-        icon.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
-        icon.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        icon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        icon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
 
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.topAnchor.constraint(equalTo: icon.bottomAnchor).isActive = true
