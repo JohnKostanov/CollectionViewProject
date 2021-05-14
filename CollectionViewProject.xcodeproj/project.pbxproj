@@ -7,19 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12C88CF26454169006DD333 /* AlbumsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88CE26454169006DD333 /* AlbumsProtocol.swift */; };
+		E12C88D12645437C006DD333 /* AlbumsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88D02645437C006DD333 /* AlbumsPresenter.swift */; };
+		E12C88D326455E3F006DD333 /* AlbumsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88D226455E3F006DD333 /* AlbumsInteractor.swift */; };
+		E12C88D526456011006DD333 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88D426456011006DD333 /* AlbumsViewController.swift */; };
+		E12C88D72645625D006DD333 /* AlbumsSell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88D62645625D006DD333 /* AlbumsSell.swift */; };
+		E12C88D92645650F006DD333 /* AlbumsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88D82645650F006DD333 /* AlbumsRouter.swift */; };
+		E12C88DC2645767F006DD333 /* AlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88DB2645767F006DD333 /* AlbumsModel.swift */; };
+		E12C88DE2645771D006DD333 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C88DD2645771D006DD333 /* AlbumModel.swift */; };
 		E13BAA9A2641D9D800A19890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BAA992641D9D800A19890 /* AppDelegate.swift */; };
-		E13BAA9E2641D9D800A19890 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BAA9D2641D9D800A19890 /* CollectionViewController.swift */; };
 		E13BAAA32641D9D900A19890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13BAAA22641D9D900A19890 /* Assets.xcassets */; };
 		E13BAAA62641D9D900A19890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13BAAA42641D9D900A19890 /* LaunchScreen.storyboard */; };
+		E1BD52B9264C0B86000C76F0 /* ExtensionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD52B8264C0B86000C76F0 /* ExtensionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E12C88CE26454169006DD333 /* AlbumsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsProtocol.swift; sourceTree = "<group>"; };
+		E12C88D02645437C006DD333 /* AlbumsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsPresenter.swift; sourceTree = "<group>"; };
+		E12C88D226455E3F006DD333 /* AlbumsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsInteractor.swift; sourceTree = "<group>"; };
+		E12C88D426456011006DD333 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		E12C88D62645625D006DD333 /* AlbumsSell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsSell.swift; sourceTree = "<group>"; };
+		E12C88D82645650F006DD333 /* AlbumsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRouter.swift; sourceTree = "<group>"; };
+		E12C88DB2645767F006DD333 /* AlbumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsModel.swift; sourceTree = "<group>"; };
+		E12C88DD2645771D006DD333 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		E13BAA962641D9D800A19890 /* CollectionViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13BAA992641D9D800A19890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E13BAA9D2641D9D800A19890 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E13BAAA22641D9D900A19890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13BAAA52641D9D900A19890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E13BAAA72641D9D900A19890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1BD52B8264C0B86000C76F0 /* ExtensionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E12C88C626453F9D006DD333 /* AppModules */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88C726453FBF006DD333 /* AlbumModule */,
+			);
+			path = AppModules;
+			sourceTree = "<group>";
+		};
+		E12C88C726453FBF006DD333 /* AlbumModule */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88C826453FE2006DD333 /* Protocols */,
+				E12C88C926453FF6006DD333 /* Entity */,
+				E12C88CA26454010006DD333 /* Interactor */,
+				E12C88CB2645401C006DD333 /* Router */,
+				E12C88CC2645402A006DD333 /* Presenter */,
+				E12C88CD26454036006DD333 /* View */,
+			);
+			path = AlbumModule;
+			sourceTree = "<group>";
+		};
+		E12C88C826453FE2006DD333 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88CE26454169006DD333 /* AlbumsProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E12C88C926453FF6006DD333 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88DB2645767F006DD333 /* AlbumsModel.swift */,
+				E12C88DD2645771D006DD333 /* AlbumModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E12C88CA26454010006DD333 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88D226455E3F006DD333 /* AlbumsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E12C88CB2645401C006DD333 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88D82645650F006DD333 /* AlbumsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E12C88CC2645402A006DD333 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88D02645437C006DD333 /* AlbumsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E12C88CD26454036006DD333 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E12C88D426456011006DD333 /* AlbumsViewController.swift */,
+				E12C88D62645625D006DD333 /* AlbumsSell.swift */,
+				E1BD52B8264C0B86000C76F0 /* ExtensionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E12C88DA264569E5006DD333 /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E13BAA992641D9D800A19890 /* AppDelegate.swift */,
+			);
+			path = AppSettings;
+			sourceTree = "<group>";
+		};
 		E13BAA8D2641D9D800A19890 = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +167,6 @@
 		E13BAAAE2641DB1300A19890 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E13BAAB22641DB8400A19890 /* Scenes */,
 				E13BAAB12641DB7D00A19890 /* App */,
 			);
 			path = Sources;
@@ -96,17 +191,10 @@
 		E13BAAB12641DB7D00A19890 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				E13BAA992641D9D800A19890 /* AppDelegate.swift */,
+				E12C88C626453F9D006DD333 /* AppModules */,
+				E12C88DA264569E5006DD333 /* AppSettings */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		E13BAAB22641DB8400A19890 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				E13BAA9D2641D9D800A19890 /* CollectionViewController.swift */,
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +266,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E13BAA9E2641D9D800A19890 /* CollectionViewController.swift in Sources */,
+				E12C88D326455E3F006DD333 /* AlbumsInteractor.swift in Sources */,
+				E12C88DC2645767F006DD333 /* AlbumsModel.swift in Sources */,
+				E12C88D526456011006DD333 /* AlbumsViewController.swift in Sources */,
+				E12C88D12645437C006DD333 /* AlbumsPresenter.swift in Sources */,
+				E12C88CF26454169006DD333 /* AlbumsProtocol.swift in Sources */,
+				E12C88DE2645771D006DD333 /* AlbumModel.swift in Sources */,
+				E1BD52B9264C0B86000C76F0 /* ExtensionsView.swift in Sources */,
 				E13BAA9A2641D9D800A19890 /* AppDelegate.swift in Sources */,
+				E12C88D72645625D006DD333 /* AlbumsSell.swift in Sources */,
+				E12C88D92645650F006DD333 /* AlbumsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,12 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        window?.rootViewController = CollectionViewController()
+        let albums = AlbumsRouter.createModule()
+
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [albums]
+
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
         return true
     }
-
-
 }
 
