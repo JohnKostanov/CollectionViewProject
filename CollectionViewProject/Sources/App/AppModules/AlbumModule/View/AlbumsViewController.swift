@@ -9,7 +9,7 @@ import UIKit
 
 class AlbumsViewController: UIViewController {
 
-    var presenter: ViewToPresenterProtocol?
+    var presenter: AlbumsViewOutput?
 
     var albumsArray: [AlbumsModel] = []
 
@@ -55,7 +55,7 @@ class AlbumsViewController: UIViewController {
     }
 }
 
-extension AlbumsViewController: PresenterToViewProtocol {
+extension AlbumsViewController: AlbumsViewInput {
     func showAlbums(albumsArray: [AlbumsModel]) {
         self.albumsArray = albumsArray
     }

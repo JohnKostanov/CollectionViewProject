@@ -7,12 +7,12 @@
 
 import UIKit
 
-class AlbumsPresenter: ViewToPresenterProtocol {
-    var view: PresenterToViewProtocol?
+class AlbumsPresenter: AlbumsViewOutput {
+    var view: AlbumsViewInput?
 
-    var interactor: PresenterToInteractorProtocol?
+    var interactor: PresenterToInteractor?
 
-    var router: PresenterToRouterProtocol?
+    var router: PresenterToRouter?
 
     func startFetchingAlbums() {
         interactor?.fetchAlbums()
@@ -23,8 +23,7 @@ class AlbumsPresenter: ViewToPresenterProtocol {
     }
 }
 
-
-extension AlbumsPresenter: InteractorToPresenterProtocol {
+extension AlbumsPresenter: InteractorToPresenter {
     func albumsFetchedSuccess(albumsModelArray: [AlbumsModel]) {
         view?.showAlbums(albumsArray: albumsModelArray)
     }
@@ -32,6 +31,4 @@ extension AlbumsPresenter: InteractorToPresenterProtocol {
     func albumsFetchFailed() {
         view?.showError()
     }
-
-
 }

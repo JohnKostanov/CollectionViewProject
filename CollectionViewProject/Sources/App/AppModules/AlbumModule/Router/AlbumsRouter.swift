@@ -7,16 +7,16 @@
 
 import UIKit
 
-class AlbumsRouter: PresenterToRouterProtocol {
+class AlbumsRouter: PresenterToRouter {
 
 
     static func createModule() -> AlbumsViewController {
-        //???
+        
         let view = AlbumsViewController()
 
-        let presenter: ViewToPresenterProtocol & InteractorToPresenterProtocol = AlbumsPresenter()
-        let interactor: PresenterToInteractorProtocol = AlbumsInteractor()
-        let router: PresenterToRouterProtocol = AlbumsRouter()
+        var presenter: AlbumsViewOutput & InteractorToPresenter = AlbumsPresenter()
+        var interactor: PresenterToInteractor = AlbumsInteractor()
+        let router: PresenterToRouter = AlbumsRouter()
 
         view.presenter = presenter
         presenter.view = view

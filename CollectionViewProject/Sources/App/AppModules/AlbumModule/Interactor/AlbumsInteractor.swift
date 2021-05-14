@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AlbumsInteractor: PresenterToInteractorProtocol {
-    var presenter: InteractorToPresenterProtocol?
+class AlbumsInteractor: PresenterToInteractor {
+    var presenter: InteractorToPresenter?
 
     func fetchAlbums() {
         let arrayAlbums = AlbumsModel.fetchData()
@@ -18,6 +18,4 @@ class AlbumsInteractor: PresenterToInteractorProtocol {
             self.presenter?.albumsFetchedSuccess(albumsModelArray: arrayAlbums)
         }
     }
-
-    
 }

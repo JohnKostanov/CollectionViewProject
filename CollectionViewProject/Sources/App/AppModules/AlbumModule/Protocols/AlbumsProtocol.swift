@@ -9,32 +9,32 @@ import UIKit
 
 // Мы используем протоколы для определения методов, которые компонент модуля может вызывать из других компонентов того же модуля. Мы можем просто сказать, что протоколы используются для связи между различными слоями.
 
-protocol ViewToPresenterProtocol: AnyObject {
+protocol AlbumsViewOutput {
 
-    var view: PresenterToViewProtocol? {get set}
-    var interactor: PresenterToInteractorProtocol? {get set}
-    var router: PresenterToRouterProtocol? {get set}
+    var view: AlbumsViewInput? {get set}
+    var interactor: PresenterToInteractor? {get set}
+    var router: PresenterToRouter? {get set}
     func startFetchingAlbums()
     func showMovieController(navigationController:UINavigationController)
 
 }
 
-protocol PresenterToViewProtocol: AnyObject {
+protocol AlbumsViewInput {
     func showAlbums(albumsArray: [AlbumsModel])
     func showError()
 }
 
-protocol PresenterToRouterProtocol: AnyObject {
+protocol PresenterToRouter {
     static func createModule() -> AlbumsViewController
     func pushToMovieScreen(navigationConroller:UINavigationController)
 }
 
-protocol PresenterToInteractorProtocol: AnyObject {
-    var presenter:InteractorToPresenterProtocol? {get set}
+protocol PresenterToInteractor {
+    var presenter:InteractorToPresenter? {get set}
     func fetchAlbums()
 }
 
-protocol InteractorToPresenterProtocol: AnyObject {
+protocol InteractorToPresenter {
     func albumsFetchedSuccess(albumsModelArray: [AlbumsModel])
     func albumsFetchFailed()
 }
